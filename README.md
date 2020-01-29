@@ -1,4 +1,4 @@
-Example setup to reproduce an issue when using lint-staged with git worktrees.
+Example setup to reproduce an issue (https://github.com/okonet/lint-staged/issues/783) when using lint-staged with git worktrees.
 
 To reproduce:
 
