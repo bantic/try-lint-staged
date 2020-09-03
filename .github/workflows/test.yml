@@ -1,0 +1,18 @@
+name: Test Adding Labels
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
+
+jobs:
+  build:
+    name: "the build"
+    runs-on: ubuntu-latest
+
+  steps:
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+    - name: Only if has label
+      if: contains(github.event.pull_request.labels.*.name, 'TRY')
+      run: echo "I RAN"
